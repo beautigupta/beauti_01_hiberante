@@ -25,7 +25,7 @@ public class EmpConfiguration {
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "851204");
 		properties.put(Environment.HBM2DDL_AUTO, "create");
 		properties.put(Environment.SHOW_SQL, "true");
-		//properties.put(Environment.FORMAT_SQL, "true");
+		properties.put(Environment.FORMAT_SQL, "true");
 
 
 		
@@ -35,9 +35,11 @@ public class EmpConfiguration {
 		
 		
 		
-		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings(properties).build())
-				.addAnnotatedClass(com.beauti.entity.Employee.class).getMetadataBuilder().build().buildSessionFactory();
 
+		return new MetadataSources(new StandardServiceRegistryBuilder().applySettings(properties).build())
+				.addAnnotatedClasses(com.beauti.entity.Employee.class,com.beauti.entity.Address.class)
+				.getMetadataBuilder().build().buildSessionFactory();
+	
 		 
 		
 	
