@@ -19,7 +19,7 @@ public class EmpConfiguration {
 		
 		
 
-		properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
+		properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
 		properties.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/hibernate");
 		properties.put(Environment.JAKARTA_JDBC_USER, "root");
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "851204");
