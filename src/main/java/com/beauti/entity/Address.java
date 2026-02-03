@@ -1,12 +1,17 @@
 package com.beauti.entity;
 
 
+
+
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToMany;
+//import jakarta.persistence.ManyToOne;
+//import jakarta.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -15,29 +20,43 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int hNo;
 	private String city, state;
+	
+//	@OneToOne
+//	private Employee employee;
+	
+//	@ManyToOne
+//	private Employee employee;
+	
+	@ManyToMany
+	private List<Employee> employees;
+	
 
-	@ManyToOne
-	private Employee employee;
 
 	public Address() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Address(String city, String state) {
+//	public Address(int hNo, String city, String state) {
+//		super();
+//		this.hNo = hNo;
+//		this.city = city;
+//		this.state = state;
+//	}
+	public Address( String city, String state) {
 		super();
 		this.city = city;
 		this.state = state;
 	}
 	
-	
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
+//	public Employee getEmployee() {
+//		return employee;
+//	}
+//
+//	public void setEmployee(Employee employee) {
+//		this.employee = employee;
+//	}
 
 	public int gethNo() {
 		return hNo;
@@ -68,4 +87,6 @@ public class Address {
 		return "Address [hNo=" + hNo + ", city=" + city + ", state=" + state + "]";
 	}
 
-}	
+	
+
+}
