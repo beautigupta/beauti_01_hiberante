@@ -1,8 +1,8 @@
 package com.beauti.entity;
 
+
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +19,7 @@ public class Employee {
 	private int salary;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany
 	private List<Address> addresses;
 
 	public Employee() {
@@ -84,4 +84,3 @@ public class Employee {
 	
 
 }
-
